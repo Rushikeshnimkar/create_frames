@@ -89,6 +89,33 @@ export default async function handler(
                 ? `<meta name="fc:frame:image:aspect_ratio" content="${values.frameRatio}">`
                 : ""
             }
+          <meta name="of:version" content="vNext">
+          <meta name="of:accepts" content="vNext">
+          <meta name="of:image" content="${currentItem.url}">
+          <meta name="of:post_url" content="${
+            process.env["HOST"]
+          }/api/toggle?id=${id}${next}">
+          <meta name="of:button:1" content="Prev">
+          <meta name="of:button:2" content="Next">
+          ${
+            showReadMore
+              ? `
+                    <meta name= "of:button:3" content = "${
+                      values?.readmore?.label ?? "Read More"
+                    }" >
+                    <meta name= "of:button:3:action" content="link" >
+                    <meta name= "of:button:3:target" content="${
+                      values?.readmore?.link
+                    }" >
+                    `
+              : ""
+          }
+            ${
+              values?.frameRatio
+                ? `<meta name="of:image:aspect_ratio" content="${values.frameRatio}">`
+                : ""
+            }
+
 
         </head>
         <body>

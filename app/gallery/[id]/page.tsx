@@ -46,6 +46,14 @@ export async function generateMetadata(
     "fc:frame:button:1": "Prev",
     "fc:frame:button:2": "Next",
     "fc:frame:image:aspect_ratio": imageData.frameRatio,
+    "of:version": "vNext",
+    "of:accepts": "vNext",
+    "of:image": `${imageData.image}`,
+    "og:image": `${imageData.image}`,
+    "of:button:1": "Prev",
+    "of:button:2": "Next",
+    "of:post_url": `${process.env["HOST"]}/api/toggle?id=${id}1`,
+    "of:image:aspect_ratio": imageData.frameRatio,
   };
 
   return {
@@ -60,6 +68,8 @@ export async function generateMetadata(
     metadataBase: new URL(process.env["HOST"] || ""),
   };
 }
+
+
 
 export default function Page({ params }: { params: { id: string } }) {
   const id = params.id;

@@ -90,7 +90,15 @@ export default async function handler(
                 : ""
             }
           <meta name="of:version" content="vNext">
-          <meta name="of:accepts" content="vNext">
+                      <meta
+	property="of:accepts:xmtp"
+	content="2024-02-01"
+/>
+<meta
+	property="of:accepts:lens"
+	content="1.1"
+/>
+
           <meta name="of:image" content="${currentItem.url}">
           <meta name="of:post_url" content="${
             process.env["HOST"]
@@ -115,6 +123,7 @@ export default async function handler(
                 ? `<meta name="of:image:aspect_ratio" content="${values.frameRatio}">`
                 : ""
             }
+
 
 
         </head>
